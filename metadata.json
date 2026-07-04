@@ -1,0 +1,6 @@
+{
+  "name": "Panelique Building Systems",
+  "description": "An interactive landing and comparison portal for C-MAX® EPS Panels. Compare traditional masonry vs C-MAX® systems, view product ranges, and request customized construction quotes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
