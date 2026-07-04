@@ -1,3 +1,4 @@
+// Production Key Check Trigger
 import React, { useState } from "react";
 import Header from "./components/Header";
 import LandingView from "./components/LandingView";
@@ -33,21 +34,21 @@ export default function App() {
       {/* Main Content Area */}
       <main className="flex-grow">
         {currentTab === "solutions" && (
-          <LandingView 
-            onNavigateToQuote={() => handleNavigateToQuote()} 
-            onNavigateToCompare={handleNavigateToCompare} 
+          <LandingView
+            onNavigateToQuote={() => handleNavigateToQuote()}
+            onNavigateToCompare={handleNavigateToCompare}
           />
         )}
-        
+
         {currentTab === "compare" && (
-          <ComparisonView 
-            onNavigateToQuote={() => handleNavigateToQuote()} 
+          <ComparisonView
+            onNavigateToQuote={() => handleNavigateToQuote()}
           />
         )}
 
         {currentTab === "products" && (
-          <ProductCatalogView 
-            onNavigateToQuote={(category) => handleNavigateToQuote(category)} 
+          <ProductCatalogView
+            onNavigateToQuote={(category) => handleNavigateToQuote(category)}
           />
         )}
 
@@ -86,8 +87,8 @@ export default function App() {
         )}
 
         {currentTab === "quote" && (
-          <QuoteCenterView 
-            preSelectedCategory={preSelectedQuoteCategory} 
+          <QuoteCenterView
+            preSelectedCategory={preSelectedQuoteCategory}
           />
         )}
       </main>
