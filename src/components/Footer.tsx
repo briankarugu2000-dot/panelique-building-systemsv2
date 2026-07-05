@@ -93,7 +93,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
           <ul className="space-y-3.5 text-xs text-surface-container-highest">
             <li className="flex items-center gap-2.5">
               <MapPin size={14} className="text-safety-orange flex-shrink-0" />
-              <span>Nairobi Industrial Area, Nairobi, Kenya</span>
+              <span>{KENYAN_CONTACTS.office}</span>
             </li>
             <li className="flex items-center gap-2.5">
               <Phone size={14} className="text-safety-orange flex-shrink-0" />
