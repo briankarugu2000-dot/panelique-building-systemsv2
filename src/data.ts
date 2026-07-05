@@ -107,9 +107,9 @@ export const PRODUCTS: Product[] = [
 ];
 
 export const KENYAN_CONTACTS = {
-  phone: "+254 722 764 433",
-  phoneFormatted: "+254722764433",
+  phone: "+254 799 684 613",
+  phoneFormatted: "+254799684613",
   email: "briankarugu2000@gmail.com",
-  office: "Exit 10 Ruiru Factory Block, Kenya"
+  office: "Thika Super Highway, Exit 10 (next to Kenya Clay LTD) Ruiru, P.O.Box 45155-00100 Nairobi, Kenya"
 };
 
