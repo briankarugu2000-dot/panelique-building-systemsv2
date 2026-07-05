@@ -39,26 +39,19 @@ export default function CmaxEstimator() {
 
   return (
     <div className="bg-white border-2 border-industrial-charcoal rounded-lg shadow-xl overflow-hidden max-w-4xl mx-auto my-8 animate-fadeIn">
-      {/* Header */}
       <div className="bg-industrial-charcoal p-6 text-white border-b-4 border-safety-orange flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="p-2.5 bg-safety-orange text-white rounded">
             <Calculator size={24} />
           </div>
           <div>
-            <h3 className="font-sans font-bold text-xl uppercase tracking-tight">C-MAX® Structural Demand Calculator</h3>
-            <p className="font-mono text-[10px] text-surface-container-high tracking-wider uppercase mt-0.5">
-              Deterministic Estimator Engine v1.1
-            </p>
+            <h3 className="font-sans font-bold text-xl uppercase tracking-tight">C-MAX® Material Calculator</h3>
           </div>
         </div>
-        <span className="hidden sm:inline-block font-mono text-[10px] px-2 py-1 bg-surface-container-low text-industrial-charcoal font-bold rounded uppercase">
-          M2 Technology
-        </span>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
-        {/* Input Panel */}
+        
         <div className="p-6 md:p-8 md:col-span-5 border-r border-surface-container bg-surface-container-lowest flex flex-col justify-between">
           <div className="space-y-6">
             <div>
@@ -120,7 +113,7 @@ export default function CmaxEstimator() {
           </div>
         </div>
 
-        {/* Output Panel */}
+        
         <div className="p-6 md:p-8 md:col-span-7 bg-white flex flex-col justify-between">
           <div>
             <span className="font-mono text-xs text-safety-orange font-bold uppercase tracking-widest block mb-4">
@@ -128,7 +121,7 @@ export default function CmaxEstimator() {
             </span>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-              {/* EPS Core Volume Card */}
+              
               <div className="border border-surface-container-highest p-4 rounded bg-surface-container-lowest hover:border-safety-orange transition-colors">
                 <div className="flex items-center gap-2 mb-2 text-slate-blue">
                   <Layers size={18} />
@@ -143,7 +136,7 @@ export default function CmaxEstimator() {
                 </p>
               </div>
 
-              {/* Plaster Concrete Card */}
+              
               <div className="border border-surface-container-highest p-4 rounded bg-surface-container-lowest hover:border-safety-orange transition-colors">
                 <div className="flex items-center gap-2 mb-2 text-slate-blue">
                   <Hammer size={18} />
@@ -159,7 +152,7 @@ export default function CmaxEstimator() {
               </div>
             </div>
 
-            {/* Weight savings sub-stat */}
+            
             <div className="bg-surface-container p-4 border-l-4 border-industrial-charcoal rounded mb-6 flex items-center justify-between">
               <div>
                 <span className="text-[10px] font-mono text-on-surface-variant uppercase block">Dead Load Reduction</span>
@@ -170,7 +163,7 @@ export default function CmaxEstimator() {
               <TrendingDown className="text-slate-blue" size={24} />
             </div>
 
-            {/* Green and HVAC Callout (from M2 Data) */}
+            
             <div className="bg-green-50 border border-green-200 p-4 rounded-lg flex items-start gap-3">
               <div className="p-1 bg-green-600 text-white rounded mt-0.5">
                 <Sparkles size={16} />

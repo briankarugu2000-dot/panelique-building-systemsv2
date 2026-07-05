@@ -21,7 +21,7 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
 
   return (
     <div className="fixed top-0 w-full z-50 flex flex-col">
-      {/* Factory visual note alert ticker top bar */}
+      
       <div className="bg-corporate-charcoal text-white text-[11px] font-mono py-2 px-4 text-center border-b border-vibrant-amber/30 select-none">
         <span className="inline-flex items-center gap-1.5 uppercase font-semibold">
           <span className="inline-block w-2 h-2 rounded-full bg-vibrant-amber animate-pulse"></span>
@@ -32,7 +32,6 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
       <header className="bg-white/95 backdrop-blur-md border-b-2 border-surface-container-low transition-all duration-300 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 md:px-8 py-3.5 flex justify-between items-center">
           
-          {/* Left side branding */}
           <div 
             className="flex items-center gap-3 cursor-pointer group"
             onClick={() => {
@@ -56,7 +55,7 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
             </div>
           </div>
 
-          {/* Right side navigation anchors */}
+          
           <nav className="hidden lg:flex items-center gap-1.5 xl:gap-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -82,7 +81,7 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
             })}
           </nav>
 
-          {/* Action Call / CTA Button */}
+          
           <div className="flex items-center gap-3">
             <a
               href={`tel:${KENYAN_CONTACTS.phoneFormatted}`}
@@ -92,7 +91,7 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
               <span>{KENYAN_CONTACTS.phone}</span>
             </a>
 
-            {/* Mobile Menu Toggle */}
+            
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="lg:hidden p-2 text-corporate-charcoal hover:text-vibrant-amber transition-colors"
@@ -102,7 +101,7 @@ export default function Header({ currentTab, setCurrentTab }: HeaderProps) {
           </div>
         </div>
 
-        {/* Mobile menu dropdown */}
+        
         {mobileMenuOpen && (
           <div className="lg:hidden border-t border-surface-container bg-white absolute top-full left-0 w-full shadow-lg py-3 px-4 flex flex-col gap-1.5 animate-fadeIn">
             {navItems.map((item) => {

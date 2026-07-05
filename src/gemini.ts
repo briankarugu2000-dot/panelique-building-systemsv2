@@ -14,7 +14,7 @@ export async function askGemini(prompt: string, history: ChatMessage[] = []): Pr
     return "Error: Gemini API key is missing or not configured in `.env.local`. Please configure `GEMINI_API_KEY` to enable the C-MAX Technical Sales Advisor chatbot.";
   }
 
-  const systemInstruction = `You are the Panelique Technical Sales AI, an expert structural advisor for genuine C-MAX EPS construction products manufactured under Emmedue (M2) technology in Kenya. Your main job is to answer building integrity questions (thermal insulation, soundproofing, 3.5cm concrete shotcrete layers) and request the user's phone number or email to finalize formal material delivery estimates.`;
+  const systemInstruction = `You are a structural advisor for C-MAX EPS construction products manufactured under Emmedue (M2) technology in Kenya. Answer building integrity questions about thermal insulation, soundproofing, and concrete shotcrete layers.`;
 
   // Map history to the SDK format
   const contents = [

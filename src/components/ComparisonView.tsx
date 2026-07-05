@@ -63,7 +63,6 @@ export default function ComparisonView({ onNavigateToQuote }: ComparisonViewProp
 
   return (
     <div className="relative pt-24 min-h-screen blueprint-grid">
-      {/* Title Header */}
       <header className="pt-8 pb-12 px-4 md:px-8 text-center max-w-5xl mx-auto">
         <div className="inline-block bg-safety-orange text-white font-mono text-xs px-4 py-1.5 mb-6 tracking-widest uppercase font-bold rounded">
           The Evolution of Infrastructure
@@ -77,7 +76,7 @@ export default function ComparisonView({ onNavigateToQuote }: ComparisonViewProp
         </p>
       </header>
 
-      {/* Interactive Sliding Comparison Feature */}
+      
       <section className="max-w-4xl mx-auto px-4 md:px-8 mb-20">
         <div className="text-center mb-6">
           <span className="font-mono text-xs text-safety-orange font-bold uppercase tracking-wider block mb-1">
@@ -145,7 +144,7 @@ export default function ComparisonView({ onNavigateToQuote }: ComparisonViewProp
         </p>
       </section>
 
-      {/* Comparison Grid Layout */}
+      
       <section className="max-w-7xl mx-auto px-4 md:px-8 pb-24">
         {/* Header Ribbon */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
@@ -254,7 +253,7 @@ export default function ComparisonView({ onNavigateToQuote }: ComparisonViewProp
         </div>
       </section>
 
-      {/* Trust Quote CTA Section */}
+      
       <section className="bg-industrial-charcoal text-white py-20 px-4 text-center relative overflow-hidden border-t-4 border-safety-orange">
         <div className="absolute inset-0 blueprint-pattern opacity-10 pointer-events-none"></div>
         <div className="relative z-10 max-w-4xl mx-auto">

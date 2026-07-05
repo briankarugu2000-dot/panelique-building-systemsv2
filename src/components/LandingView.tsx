@@ -46,7 +46,6 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
 
   return (
     <div className="relative pt-12">
-      {/* Hero Section */}
       <section className="relative bg-industrial-charcoal text-white pt-20 pb-24 md:py-32 px-4 md:px-8 min-h-[85vh] flex flex-col justify-center items-start overflow-hidden border-b-4 border-safety-orange">
         <div className="absolute inset-0 industrial-grid opacity-15 pointer-events-none"></div>
         <div className="absolute right-0 bottom-0 w-full lg:w-1/2 h-[45%] lg:h-full opacity-35 lg:opacity-75 mix-blend-luminosity pointer-events-none">
@@ -89,7 +88,7 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
         </div>
       </section>
 
-      {/* "Why Builders Are Switching" tape */}
+      
       <section className="py-10 bg-surface-container border-y-2 border-industrial-charcoal overflow-hidden shadow-inner">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 justify-between items-center text-center md:text-left">
@@ -133,7 +132,7 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
         </div>
       </section>
 
-      {/* Systemic Efficiency alternating grid */}
+      
       <section className="py-20 px-4 md:px-8 bg-surface">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 text-center">
@@ -240,7 +239,7 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
         </div>
       </section>
 
-      {/* Product Highlight Section */}
+      
       <section className="py-20 px-4 md:px-8 bg-surface-container-low border-t-2 border-surface-container-highest">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Construction Image Container */}
@@ -295,7 +294,7 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
         </div>
       </section>
 
-      {/* Call to Action Band */}
+      
       <section className="mx-4 md:mx-8 mb-24 max-w-7xl lg:mx-auto">
         <div className="bg-gradient-to-r from-safety-orange to-safety-orange-hover p-8 md:p-12 relative overflow-hidden flex flex-col md:flex-row justify-between items-center gap-8 rounded-lg shadow-xl border-2 border-industrial-charcoal">
           <div className="absolute top-0 right-0 w-64 h-64 border-[32px] border-white/10 rounded-full -mr-32 -mt-32 pointer-events-none"></div>
@@ -319,7 +318,7 @@ export default function LandingView({ onNavigateToQuote, onNavigateToCompare }: 
         </div>
       </section>
 
-      {/* WATCH PROCESS STEP MODAL */}
+      
       {showProcessModal && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white border-2 border-industrial-charcoal rounded-lg max-w-3xl w-full overflow-hidden shadow-2xl animate-scaleUp">

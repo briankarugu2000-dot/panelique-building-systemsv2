@@ -8,33 +8,27 @@ interface QuoteCenterViewProps {
 }
 
 export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterViewProps) {
-  // Calculator States
   const [projectType, setProjectType] = useState<string>("residential-1");
   const [wallLength, setWallLength] = useState<number>(35);
   const [wallHeight, setWallHeight] = useState<number>(3);
   const [area, setArea] = useState<number>(105);
 
-  // Upload Blueprint Simulator States
   const [uploading, setUploading] = useState<boolean>(false);
   const [uploadStep, setUploadStep] = useState<string>("");
   const [uploadedFile, setUploadedFile] = useState<{ name: string; size: string } | null>(null);
 
-  // Lead Form States
   const [fullName, setFullName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [phone, setPhone] = useState<string>("");
   const [notes, setNotes] = useState<string>("");
   
-  // Submission States
   const [submittedInquiry, setSubmittedInquiry] = useState<Inquiry | null>(null);
   const [savedQuotations, setSavedQuotations] = useState<Inquiry[]>([]);
 
-  // Update area when sliders move
   useEffect(() => {
     setArea(wallLength * wallHeight);
   }, [wallLength, wallHeight]);
 
-  // Set initial category if redirected from catalog
   useEffect(() => {
     if (preSelectedCategory) {
       if (preSelectedCategory === "wall-panels") {
@@ -47,7 +41,6 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
     }
   }, [preSelectedCategory]);
 
-  // Load saved quotes from localStorage on mount
   useEffect(() => {
     const cached = localStorage.getItem("panelique_quotes");
     if (cached) {
@@ -59,45 +52,37 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
     }
   }, []);
 
-  // Simulate file drawing upload with realistic progress steps
   const handleSimulateUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
 
     setUploading(true);
-    setUploadStep("Establishing connection with drafting parser...");
+    setUploadStep("Processing drawing...");
     
     setTimeout(() => {
-      setUploadStep("Scanning drawing dimensions & wall scales...");
+      setUploadStep("Reading dimensions...");
       setTimeout(() => {
-        setUploadStep("Identifying load-bearing partitions...");
         setTimeout(() => {
-          setUploadStep("Estimating C-MAX® double-mesh coverage...");
-          setTimeout(() => {
-            setUploading(false);
-            setUploadedFile({
-              name: file.name,
-              size: (file.size / 1024 / 1024).toFixed(2) + " MB"
-            });
-            // Auto populate values based on randomized realistic dimensions from file scanning simulation
-            const randomizedLength = Math.floor(Math.random() * 80) + 20;
-            const randomizedHeight = 3;
-            setWallLength(randomizedLength);
-            setWallHeight(randomizedHeight);
-            setUploadStep("");
-          }, 800);
+          setUploading(false);
+          setUploadedFile({
+            name: file.name,
+            size: (file.size / 1024 / 1024).toFixed(2) + " MB"
+          });
+          const randomizedLength = Math.floor(Math.random() * 80) + 20;
+          const randomizedHeight = 3;
+          setWallLength(randomizedLength);
+          setWallHeight(randomizedHeight);
+          setUploadStep("");
         }, 800);
       }, 800);
     }, 800);
   };
 
-  // Calculations Formulas
-  const panelsCount = Math.ceil(area / 3); // Each standard panel is 1.2m wide * 2.5m/3.0m high = approx 3 sqm
-  // Average Ksh price per square meter of complete high grade C-MAX assembled panels is around Ksh 4,200
+  const panelsCount = Math.ceil(area / 3);
   const estimatedCost = area * 4200; 
-  const weightSavedKg = area * (320 - 55); // Traditional (320 kg/sqm) vs C-MAX (55 kg/sqm)
+  const weightSavedKg = area * (320 - 55);
   const daysSaved = Math.max(5, Math.round(area * 0.3));
-  const coolingSavingsKsh = Math.round(area * 750); // Ksh savings on HVAC annually per sqm
+  const coolingSavingsKsh = Math.round(area * 750);
 
   // Handle Quotation Submission
   const handleSubmitQuote = (e: React.FormEvent) => {
@@ -119,7 +104,6 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
       submittedAt: new Date().toLocaleDateString("en-KE", { dateStyle: "medium" })
     };
 
-    // POST lead to backend Express server
     fetch('/api/leads', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -143,7 +127,6 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
     localStorage.setItem("panelique_quotes", JSON.stringify(updated));
     setSubmittedInquiry(newInquiry);
 
-    // Reset Lead Form
     setFullName("");
     setEmail("");
     setPhone("");
@@ -161,18 +144,18 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
     <div className="relative pt-24 min-h-screen blueprint-pattern">
       <header className="pt-8 pb-12 px-4 md:px-8 text-center max-w-4xl mx-auto">
         <span className="font-mono text-xs text-safety-orange tracking-[0.25em] font-bold block mb-2">
-          AUTOMATED QUANTITY AND BUDGET SHEET
+          QUOTE CENTER
         </span>
         <h1 className="font-sans font-black text-3xl md:text-5xl text-industrial-charcoal mb-4 tracking-tight leading-none uppercase">
-          Interactive Quote Center
+          Quote Center
         </h1>
         <p className="font-sans text-base md:text-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-          Estimate panel quantities, calculate load-bearing wall weight reductions, and print immediate pre-contract budget proposals.
+          Estimate panel quantities and calculate cost.
         </p>
       </header>
 
       {submittedInquiry ? (
-        /* Dynamic Receipt/Proposal Sheet */
+        
         <section className="max-w-4xl mx-auto px-4 md:px-8 pb-24">
           <div className="bg-white border-4 border-industrial-charcoal rounded-lg shadow-2xl p-6 md:p-10 animate-scaleUp">
             {/* Header branding */}
@@ -320,13 +303,12 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
           </div>
         </section>
       ) : (
-        /* Form & Calculator View */
         <section className="max-w-7xl mx-auto px-4 md:px-8 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
           
-          {/* Left Column: Interactive Estimator Inputs */}
+          
           <div className="lg:col-span-7 space-y-6">
             
-            {/* Project Settings Block */}
+            
             <div className="bg-white border-2 border-industrial-charcoal rounded p-6 shadow-sm">
               <div className="flex items-center gap-3 border-b border-surface-container pb-3 mb-5">
                 <span className="p-1.5 bg-safety-orange/10 text-safety-orange rounded">
@@ -379,7 +361,7 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
               </div>
             </div>
 
-            {/* Drawing blueprint upload simulator */}
+            
             <div className="bg-white border-2 border-industrial-charcoal rounded p-6 shadow-sm">
               <div className="flex items-center gap-3 border-b border-surface-container pb-3 mb-5">
                 <span className="p-1.5 bg-safety-orange/10 text-safety-orange rounded">
@@ -444,7 +426,7 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
               )}
             </div>
 
-            {/* Slider Dimensions Block */}
+            
             <div className="bg-white border-2 border-industrial-charcoal rounded p-6 shadow-sm">
               <div className="flex items-center justify-between border-b border-surface-container pb-3 mb-5">
                 <div className="flex items-center gap-3">
@@ -518,10 +500,10 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
             </div>
           </div>
 
-          {/* Right Column: Live Estimates & Lead Form */}
+          
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Live Estimation Output Sheet */}
+            
             <div className="bg-industrial-charcoal text-white rounded p-6 shadow-md border-l-8 border-safety-orange relative overflow-hidden">
               <div className="absolute inset-0 industrial-grid opacity-5 pointer-events-none"></div>
               
@@ -559,7 +541,7 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
               </div>
             </div>
 
-            {/* Quote Submission Lead Capture Form */}
+            
             <div className="bg-white border-2 border-industrial-charcoal rounded p-6 shadow-sm">
               <div className="border-b border-surface-container pb-3 mb-5">
                 <h3 className="font-sans font-black text-sm text-industrial-charcoal uppercase tracking-tight">
@@ -636,7 +618,7 @@ export default function QuoteCenterView({ preSelectedCategory }: QuoteCenterView
               </form>
             </div>
 
-            {/* Log of Saved Quotations locally */}
+            
             {savedQuotations.length > 0 && (
               <div className="bg-white border-2 border-industrial-charcoal rounded p-5 shadow-sm">
                 <span className="font-mono text-[10px] text-on-surface-variant uppercase font-bold block mb-2 border-b border-surface-container pb-1">

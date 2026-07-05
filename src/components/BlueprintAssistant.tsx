@@ -7,7 +7,7 @@ export default function BlueprintAssistant() {
   const [messages, setMessages] = useState<ChatMessage[]>([
     {
       role: 'model',
-      text: "Jambo! I am your C-MAX® Technical Sales Advisor. Ask me anything about structural specifications, load capacities, steel mesh density, or estimate how many panels you need for your project in Kenya. How can I help you build smarter today?"
+      text: "Ask me about structural specifications, load capacities, steel mesh density, or estimate how many panels you need for your project in Kenya."
     }
   ]);
   const [input, setInput] = useState("");
@@ -15,7 +15,6 @@ export default function BlueprintAssistant() {
   const [hasApiKeyError, setHasApiKeyError] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Suggested prompts for contractors
   const suggestedPrompts = [
     "How many panels for a 4-story apartment block in Ruiru?",
     "What is the concrete plaster thickness & class needed?",
@@ -23,12 +22,10 @@ export default function BlueprintAssistant() {
     "Is C-MAX certified by KEBS?"
   ];
 
-  // Auto-scroll to the bottom of the chat
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
 
-  // Check for API key on mount
   useEffect(() => {
     const key = process.env.GEMINI_API_KEY;
     if (!key || key.trim() === "" || key.trim() === "YOUR_GEMINI_API_KEY_HERE") {
@@ -103,7 +100,6 @@ export default function BlueprintAssistant() {
 
   return (
     <div className="bg-white border-2 border-industrial-charcoal rounded-lg shadow-xl overflow-hidden max-w-4xl mx-auto my-8 flex flex-col h-[650px] animate-fadeIn">
-      {/* Header */}
       <div className="bg-industrial-charcoal p-4 text-white border-b-4 border-safety-orange flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="p-2 bg-safety-orange text-white rounded-full animate-pulse">
@@ -111,41 +107,29 @@ export default function BlueprintAssistant() {
           </div>
           <div>
             <h3 className="font-sans font-bold text-base uppercase tracking-tight flex items-center gap-2">
-              AI Blueprint Assistant
-              <span className="bg-safety-orange/20 text-safety-orange font-mono text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">
-                Gemini Powered
-              </span>
+              Blueprint Assistant
             </h3>
-            <p className="font-mono text-[9px] text-surface-container-high tracking-wider uppercase mt-0.5">
-              C-MAX® Technical Sales Advisor
-            </p>
           </div>
         </div>
         <button
           onClick={handleClearChat}
           className="text-white/60 hover:text-white p-2 hover:bg-white/10 rounded transition-colors text-xs flex items-center gap-1 font-mono uppercase"
-          title="Clear Conversation"
         >
           <Trash2 size={14} />
           <span className="hidden sm:inline">Clear</span>
         </button>
       </div>
 
-      {/* API Key Banner Warning if applicable */}
       {hasApiKeyError && (
         <div className="bg-red-50 border-b border-red-200 p-3.5 flex items-start gap-3">
           <AlertCircle className="text-red-600 mt-0.5 flex-shrink-0" size={18} />
           <div className="text-xs text-red-800 leading-normal">
-            <span className="font-bold">Missing Gemini API Key:</span> The chatbot is currently in offline demo mode. 
-            To activate live structural estimations and architectural chat, please copy 
-            <code className="bg-red-100 px-1 py-0.5 rounded mx-1 font-mono">.env.example</code> to 
-            <code className="bg-red-100 px-1 py-0.5 rounded mx-1 font-mono">.env.local</code> and paste your active 
-            Gemini key into the <code className="bg-red-100 px-1.5 py-0.5 rounded font-mono font-bold">GEMINI_API_KEY</code> field, then restart your dev server.
+            <span className="font-bold">Missing API Key:</span> Set your GEMINI_API_KEY in .env.local.
           </div>
         </div>
       )}
 
-      {/* Messages area */}
+      
       <div className="flex-1 overflow-y-auto p-4 md:p-6 bg-surface-container-low blueprint-grid space-y-4">
         {messages.map((msg, index) => {
           const isBot = msg.role === 'model';
@@ -179,7 +163,7 @@ export default function BlueprintAssistant() {
                   {msg.text}
                 </div>
                 <span className="font-mono text-[9px] text-on-surface-variant/60 block px-1 text-right">
-                  {isBot ? "Technical Advisor" : "Contractor"}
+                  {isBot ? "Assistant" : "You"}
                 </span>
               </div>
             </div>
@@ -195,14 +179,13 @@ export default function BlueprintAssistant() {
               <span className="w-2 h-2 bg-safety-orange rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></span>
               <span className="w-2 h-2 bg-safety-orange rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></span>
               <span className="w-2 h-2 bg-safety-orange rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></span>
-              <span className="text-xs font-mono text-on-surface-variant pl-1">Advisor is thinking...</span>
+              <span className="text-xs font-mono text-on-surface-variant pl-1">Thinking...</span>
             </div>
           </div>
         )}
         <div ref={messagesEndRef} />
       </div>
 
-      {/* Suggested Prompts Grid */}
       <div className="bg-white p-3 border-t border-surface-container-high flex flex-wrap gap-2 items-center">
         <span className="text-[10px] font-mono font-bold text-on-surface-variant/80 uppercase tracking-wider flex items-center gap-1">
           <HelpCircle size={12} />
@@ -220,7 +203,7 @@ export default function BlueprintAssistant() {
         ))}
       </div>
 
-      {/* Input area */}
+
       <div className="bg-surface-container p-4 border-t-2 border-industrial-charcoal flex gap-2 items-center">
         <input
           type="text"
@@ -240,12 +223,11 @@ export default function BlueprintAssistant() {
         </button>
       </div>
 
-      {/* Lead Capture Sticky Note */}
       <div className="bg-surface-container-highest px-4 py-2 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono text-on-surface-variant gap-2">
-        <span>Need a stamped engineering drawing quote? Leave your contact details in chat.</span>
+        <span>Leave your contact details in chat for a quote.</span>
         <span className="flex items-center gap-1 font-bold text-safety-orange">
           <PhoneCall size={10} />
-          Office: {KENYAN_CONTACTS.phone}
+          {KENYAN_CONTACTS.phone}
         </span>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
 
   return (
     <div className="relative pt-24 min-h-screen blueprint-pattern">
-      {/* Page Header */}
+      
       <header className="pt-8 pb-12 px-4 md:px-8 text-center max-w-4xl mx-auto">
         <span className="font-mono text-xs text-safety-orange tracking-[0.25em] font-bold block mb-2">
           ENGINEERED COMPOSITE SPECIFICATIONS
@@ -30,7 +30,7 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
         </p>
       </header>
 
-      {/* Certifications Banner Tape */}
+      
       <section className="bg-industrial-charcoal text-white py-6 border-y-4 border-safety-orange mb-12">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-wrap gap-4 md:gap-8 justify-around items-center">
           <div className="flex items-center gap-3">
@@ -65,9 +65,9 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
         </div>
       </section>
 
-      {/* Main Grid Content */}
+      
       <section className="max-w-7xl mx-auto px-4 md:px-8 pb-24 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        {/* Left Side: Product Selector Tabs */}
+        
         <div className="lg:col-span-4 flex flex-col gap-4">
           <div className="bg-white border-2 border-industrial-charcoal p-5 rounded">
             <h3 className="font-sans font-black text-xs text-on-surface-variant tracking-wider uppercase mb-4 border-b border-surface-container pb-2">
@@ -107,7 +107,7 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
             </div>
           </div>
 
-          {/* Quick Quote Promo Card */}
+          
           <div className="bg-white border-2 border-dashed border-industrial-charcoal p-6 rounded text-center">
             <span className="p-2 bg-safety-orange/10 text-safety-orange rounded-full inline-block mb-3">
               <Calculator size={24} />
@@ -127,7 +127,7 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
           </div>
         </div>
 
-        {/* Right Side: Detailed Tech Specs & Benefits */}
+        
         <div className="lg:col-span-8">
           {PRODUCTS.filter(p => p.id === selectedProductCategory).map((prod) => (
             <div key={prod.id} className="bg-white border-2 border-industrial-charcoal rounded p-6 md:p-8 shadow-md animate-fadeIn">
@@ -202,7 +202,7 @@ export default function ProductCatalogView({ onNavigateToQuote }: ProductCatalog
         </div>
       </section>
 
-      {/* Trust Quote CTA */}
+      
       <section className="mx-4 md:mx-8 mb-24 max-w-7xl lg:mx-auto">
         <div className="bg-industrial-charcoal p-8 md:p-12 text-white border-b-8 border-safety-orange rounded-lg shadow-xl relative overflow-hidden flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="absolute inset-0 industrial-grid opacity-10 pointer-events-none"></div>

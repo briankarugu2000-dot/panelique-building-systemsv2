@@ -18,9 +18,7 @@ export interface ComparisonPoint {
   number: string;
   title: string;
   traditionalDesc: string;
-  traditionalImg: string;
   cmaxDesc: string;
-  cmaxImg: string;
   iconName: string;
 }
 

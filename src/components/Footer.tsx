@@ -16,7 +16,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
       <div className="absolute inset-0 industrial-grid opacity-5 pointer-events-none"></div>
       
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 pb-12 border-b border-white/10 relative z-10">
-        {/* Brand Column */}
+        
         <div className="md:col-span-4 space-y-4">
           <div className="flex items-center gap-2 cursor-pointer" onClick={scrollToTop}>
             <img 
@@ -44,7 +44,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
           </div>
         </div>
 
-        {/* Quick Links Column */}
+        
         <div className="md:col-span-2 space-y-4">
           <h4 className="font-sans font-extrabold text-xs uppercase tracking-wider text-safety-orange border-l-2 border-safety-orange pl-2">
             SOLUTIONS
@@ -85,7 +85,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
           </ul>
         </div>
 
-        {/* Contact details */}
+        
         <div className="md:col-span-3 space-y-4">
           <h4 className="font-sans font-extrabold text-xs uppercase tracking-wider text-safety-orange border-l-2 border-safety-orange pl-2">
             OFFICE CONTACTS
@@ -110,7 +110,7 @@ export default function Footer({ setCurrentTab }: FooterProps) {
           </ul>
         </div>
 
-        {/* Newsletter Signup / Action */}
+        
         <div className="md:col-span-3 space-y-4">
           <h4 className="font-sans font-extrabold text-xs uppercase tracking-wider text-safety-orange border-l-2 border-safety-orange pl-2">
             DRAWINGS ENQUIRY
@@ -129,10 +129,10 @@ export default function Footer({ setCurrentTab }: FooterProps) {
       </div>
 
       <div className="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-surface-container-highest/60 relative z-10 font-mono">
-        <span>© {new Date().getFullYear()} Panelique Building Systems. Engineered with Italian Emmedue® Technology.</span>
+        <span>© {new Date().getFullYear()} Panelique Building Systems.</span>
         
         <div className="flex items-center gap-4">
-          <span className="hover:text-safety-orange cursor-pointer">Terms & Conditions</span>
+          <span className="hover:text-safety-orange cursor-pointer">Terms</span>
           <span>•</span>
           <span className="hover:text-safety-orange cursor-pointer">Privacy Charter</span>
           <span>•</span>

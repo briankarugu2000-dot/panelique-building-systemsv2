@@ -1,4 +1,3 @@
-// Production Key Check Trigger
 import React, { useState } from "react";
 import Header from "./components/Header";
 import LandingView from "./components/LandingView";
@@ -28,10 +27,9 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-industrial-slate text-corporate-charcoal font-sans selection:bg-vibrant-amber selection:text-white">
-      {/* Dynamic Header */}
       <Header currentTab={currentTab} setCurrentTab={setCurrentTab} />
 
-      {/* Main Content Area */}
+      
       <main className="flex-grow">
         {currentTab === "solutions" && (
           <LandingView
@@ -56,7 +54,7 @@ export default function App() {
           <div className="pt-24 px-4 md:px-8 bg-industrial-slate blueprint-pattern min-h-screen">
             <div className="max-w-4xl mx-auto pt-8 text-center">
               <span className="font-mono text-xs text-vibrant-amber tracking-[0.25em] font-bold block mb-2">
-                DETERMINISTIC QUANTITY ENGINE
+                MATERIAL ESTIMATOR
               </span>
               <h1 className="font-sans font-black text-3xl md:text-5xl text-corporate-charcoal mb-4 tracking-tight leading-none uppercase">
                 C-MAX® Material Estimator
@@ -73,13 +71,13 @@ export default function App() {
           <div className="pt-24 px-4 md:px-8 bg-industrial-slate blueprint-pattern min-h-screen">
             <div className="max-w-4xl mx-auto pt-8 text-center">
               <span className="font-mono text-xs text-vibrant-amber tracking-[0.25em] font-bold block mb-2">
-                CO-PILOT SALES ADVISOR
+                BLUEPRINT ASSISTANT
               </span>
               <h1 className="font-sans font-black text-3xl md:text-5xl text-corporate-charcoal mb-4 tracking-tight leading-none uppercase">
-                AI Blueprint Assistant
+                Blueprint Assistant
               </h1>
               <p className="font-sans text-sm md:text-base text-on-surface-variant max-w-2xl mx-auto mb-6">
-                Consult with our specialized Gemini-powered agent on Kenyan building codes, steel wire mesh specs, and double panel structural spans.
+                Get answers on Kenyan building codes, steel wire mesh specs, and panel structural spans.
               </p>
             </div>
             <BlueprintAssistant />
@@ -93,7 +91,6 @@ export default function App() {
         )}
       </main>
 
-      {/* Footplate */}
       <Footer setCurrentTab={setCurrentTab} />
     </div>
   );

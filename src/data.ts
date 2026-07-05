@@ -14,9 +14,7 @@ export const COMPARISON_POINTS: ComparisonPoint[] = [
     number: "01",
     title: "CONSTRUCTION SPEED",
     traditionalDesc: "Slow masonry. Requires heavy mortar, drying time between courses, and extensive manual labor. Susceptible to weather delays.",
-    traditionalImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTRxO80pmTSaoWR-c5OQpsin3T_NTQn47hN1cwDi-HqrRhsQ_cTvK8y0w5hk7NyA3_OF2JTyOSZXKp7wK455Ny3AykhP32Bind1WTJSFj3C8lPNpEbXzdt22tAHUTb9oUk5sK_Sr3WlnrHaNUkxvO5CzzDh4bW8TVRZfEqyIB5hUGU9srR1a6krW8D_KnIT2gbDalznLx0E6yTBVzmdwnKCE8tqVNY3hUP9jYXZCG-uKQ96GGz807EUxHWdyxSU6Y0Ll0MxOH3TPs",
     cmaxDesc: "Fast panel assembly. Pre-engineered modules snap into place. Reductions in build time by up to 40% compared to stone.",
-    cmaxImg: "https://lh3.googleusercontent.com/aida-public/AB6AXuBr05Ix4GR7r7CL74UF41eNBUnsb24jkXJUXihs4_ezLanluZAUCOgZShYPw_gj0ohwgfCq9BJQbKVsO8XcjR8rx37_tMnVsLi60qWkC_MRJhCwQKU3ptwM1hKiR4RZENXytiEs8pX1_e4FKpvlJ554da4GmFKjQIwsQrSI9vrdKed_PKpUexL11xOG9DSOxuD94yTyPyQKzDJxq7PuLWJf_oyP9Nl7sJizfHFttATdGhgXWWnLPwzZeUNRvUDPTB_AXz9F6mibDSs",
     iconName: "Zap"
   },
   {
@@ -24,9 +22,7 @@ export const COMPARISON_POINTS: ComparisonPoint[] = [
     number: "02",
     title: "ENERGY EFFICIENCY",
     traditionalDesc: "Poor insulation. Thermal bridging causes heat gain in summer and loss in winter. High dependence on HVAC systems.",
-    traditionalImg: "", // reuse standard placeholder / CSS
     cmaxDesc: "80% cooling savings. Double insulation core eliminates thermal bridges, maintaining a constant internal climate effortlessly.",
-    cmaxImg: "",
     iconName: "Thermometer"
   },
   {
@@ -34,9 +30,7 @@ export const COMPARISON_POINTS: ComparisonPoint[] = [
     number: "03",
     title: "ECO-IMPACT",
     traditionalDesc: "Heavy quarrying. Massive carbon footprint from transportation of stone and high-cement content in mortar and blocks.",
-    traditionalImg: "",
     cmaxDesc: "60% lower emissions. Fully recyclable materials and minimal site waste make C-MAX the sustainable choice for green building.",
-    cmaxImg: "",
     iconName: "Leaf"
   },
   {
@@ -44,9 +38,7 @@ export const COMPARISON_POINTS: ComparisonPoint[] = [
     number: "04",
     title: "COMFORT & ACOUSTICS",
     traditionalDesc: "Sound and heat leaks. Vibrations travel easily through rigid stone structures, reducing acoustic privacy between rooms.",
-    traditionalImg: "",
     cmaxDesc: "High-grade soundproofing. EPS core acts as a natural dampener, providing superior sound insulation for serene living spaces.",
-    cmaxImg: "",
     iconName: "VolumeX"
   },
   {
@@ -54,9 +46,7 @@ export const COMPARISON_POINTS: ComparisonPoint[] = [
     number: "05",
     title: "QUALITY CONTROL",
     traditionalDesc: "Variable quality. Dependent on artisan skill at each site. Inconsistent stone quality and mortar mixing lead to structural variances.",
-    traditionalImg: "",
     cmaxDesc: "KEBS-certified, Emmedue tech. Factory-precision manufacturing ensures every panel meets strict international safety standards.",
-    cmaxImg: "",
     iconName: "ShieldCheck"
   }
 ];
